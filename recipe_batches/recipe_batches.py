@@ -8,7 +8,8 @@ def recipe_batches(recipe, ingredients):
         min_ratio = math.inf
         for key in recipe:
             ratio = ingredients[key] // recipe[key]
-            min_ratio = ratio if ratio < min_ratio else min_ratio
+            if ratio < min_ratio:
+                min_ratio = ratio
         return min_ratio
     return 0
 
